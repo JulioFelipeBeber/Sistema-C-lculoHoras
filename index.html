@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Cálculo de Horas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="header-section">
+                <h4>Adicional Noturno</h4>
+                <p>Calculado com base em um período fixo de 52 minutos e 30 segundos (52m30s) por cada hora de trabalho durante o período noturno.</p>
+            </div>
+            <div class="header-section">
+                <h4>Tolerância Geral</h4>
+                <p>10 minutos</p>
+            </div>
+            <div class="header-section">
+                <h4>Considerar Integral</h4>
+                <p>O sistema deve considerar integralmente todas as ocorrências.</p>
+            </div>
+            <div class="header-section">
+                <h4>Intervalos</h4>
+                <p>O sistema deve considerar e calcular os intervalos de forma automática, baseando-se nas marcações inseridas.</p>
+            </div>
+        </div>
+
+        <div class="input-section">
+            <div class="field">
+                <label for="dailyHours">Carga Horária</label>
+                <input type="time" id="dailyHours" value="08:45">
+            </div>
+
+            <div class="field">
+                <label for="timeInput">Marcações</label>
+                <div id="timeContainer" class="time-input-container">
+                    <!-- <input type="time" id="timeInput"> -->
+                    <button id="addTimeButton" class="add-button">+</button>
+                </div>
+            </div>
+
+            <button id="calculateButton" class="calculate-button">CALCULAR</button>
+        </div>
+
+        <div class="results">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Horas Trabalhadas</th>
+                        <th>Débito</th>
+                        <th>Crédito</th>
+                        <th>Horas Trabalhadas Normais</th>
+                        <th>Adicional Noturno</th>
+                        <th>Intervalo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="workedHours">00:00</td>
+                        <td id="debit">00:00</td>
+                        <td id="credit">00:00</td>
+                        <td id="normalHours">00:00</td>
+                        <td id="nightShift">00:00</td>
+                        <td id="breaks">00:00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
